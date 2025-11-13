@@ -94,12 +94,16 @@ Payload tấn công: `<script>alert(document.cookie)</script>`
 * **Kết quả:**
    trước khi nhập mã độc:
    <img width="1427" height="618" alt="image" src="https://github.com/user-attachments/assets/3a94e00f-6e24-43b3-afd3-530031fe55e7" />
+   sau khi nhập mã độc:
+   <img width="721" height="220" alt="image" src="https://github.com/user-attachments/assets/17b96483-17ff-438f-bfd9-6ac5694f1372" />
+   <img width="1899" height="548" alt="image" src="https://github.com/user-attachments/assets/1833953f-a21f-4f75-8c21-08b23ca1b540" />
 
 
 **2. SAU khi bật `HttpOnly`:**
 * **Mô tả:** Sửa code `app.js` để thêm `{ httpOnly: true }` vào `res.cookie()`. Khởi động lại server và tấn công lại.
 * **Kết quả:** Mã độc vẫn chạy (lỗ hổng XSS vẫn còn) nhưng khi gọi `document.cookie`, trình duyệt che giấu cookie `sessionId` đi. Cuộc tấn công đánh cắp phiên thất bại.
-    > **[Dán ảnh chụp màn hình 2: Hộp thoại `alert` hiện ra nội dung RỖNG của bạn vào đây]**
+    <img width="663" height="219" alt="image" src="https://github.com/user-attachments/assets/efe27080-3e59-4298-b389-1e4db6f91950" />
+
 
 ---
 
@@ -110,12 +114,12 @@ Mục tiêu: Nghe lén mạng (giả lập bằng DevTools) để xem cookie có
 **1. TRƯỚC khi bật `Secure` (trên HTTP):**
 * **Mô tả:** Đăng nhập và theo dõi tab "Network" (Mạng) trong F12. Cookie `sessionId` bị gửi đi dưới dạng văn bản thuần (plain text) trong Request Headers.
 * **Kết quả:** Kẻ tấn công có thể "vớt" được cookie này.
-    > **[Dán ảnh chụp màn hình 3: Tab F12-Network, thấy rõ dòng `Cookie: sessionId=...` trên kết nối `http://localhost` của bạn vào đây]**
+   
 
 **2. SAU khi bật `Secure` (trên HTTP):**
 * **Mô tả:** Sửa code `app.js` để thêm `{ secure: true }`. Khởi động lại server và truy cập `http://localhost:3000`.
 * **Kết quả:** Trình duyệt **từ chối** gửi cookie `Secure` qua kết nối HTTP. Ứng dụng sẽ báo bạn "chưa đăng nhập" (vì server không nhận được cookie). Kẻ nghe lén không bắt được gì.
-    > **[Dán ảnh chụp màn hình 4: Tab F12-Network, KHÔNG thấy dòng `Cookie: sessionId=...` khi truy cập `http://localhost` của bạn vào đây]**
+   
 
 **3. SAU khi bật `Secure` (trên HTTPS):**
 * **Mô tả:** (Demo thêm bằng `ngrok`). Chạy `ngrok http 3000` và truy cập đường link `https://...ngrok.io`.
