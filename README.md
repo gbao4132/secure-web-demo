@@ -114,10 +114,10 @@ Mục tiêu: Nghe lén mạng (giả lập bằng DevTools) để xem cookie có
 **1. TRƯỚC khi bật `Secure` (trên HTTP):**
 * **Mô tả:** Đăng nhập và theo dõi tab "Network" (Mạng) trong F12. Cookie `sessionId` bị gửi đi dưới dạng văn bản thuần (plain text) trong Request Headers.
 * **Kết quả:** Kẻ tấn công có thể "vớt" được cookie này.
-   
+   <img width="959" height="407" alt="image" src="https://github.com/user-attachments/assets/fb51ef3a-23ba-46ad-9684-7a984f168696" />
+
 
 **2. SAU khi bật `Secure` (trên HTTP):**
-* **Mô tả:** Sửa code `app.js` để thêm `{ secure: true }`. Khởi động lại server và truy cập `http://localhost:3000`.
 * **Kết quả:** Trình duyệt **từ chối** gửi cookie `Secure` qua kết nối HTTP. Ứng dụng sẽ báo bạn "chưa đăng nhập" (vì server không nhận được cookie). Kẻ nghe lén không bắt được gì.
    
 
