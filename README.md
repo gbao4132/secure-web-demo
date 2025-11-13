@@ -119,9 +119,6 @@ Mục tiêu: Nghe lén mạng (giả lập bằng DevTools) để xem cookie có
 
 **2. SAU khi bật `Secure` (trên HTTP):**
 * **Kết quả:** Trình duyệt **từ chối** gửi cookie `Secure` qua kết nối HTTP. Ứng dụng sẽ báo bạn "chưa đăng nhập" (vì server không nhận được cookie). Kẻ nghe lén không bắt được gì.
-   
+   <img width="854" height="282" alt="image" src="https://github.com/user-attachments/assets/a6fa89eb-0b1d-4e56-8467-a068065c5add" />
 
-**3. SAU khi bật `Secure` (trên HTTPS):**
-* **Mô tả:** (Demo thêm bằng `ngrok`). Chạy `ngrok http 3000` và truy cập đường link `https://...ngrok.io`.
-* **Kết quả:** Kết nối đã được mã hóa (HTTPS). Trình duyệt đồng ý gửi cookie `Secure` đi. Kẻ nghe lén chỉ thấy dữ liệu mã hóa, không đọc được cookie.
-    > **[Dán ảnh chụp màn hình 5: Tab F12-Security, thấy kết nối HTTPS báo "Secure" (có ổ khóa) của `ngrok` của bạn vào đây]**
+
