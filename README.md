@@ -92,7 +92,9 @@ Payload tấn công: `<script>alert(document.cookie)</script>`
 **1. TRƯỚC khi bật `HttpOnly`:**
 * **Mô tả:** Máy chủ set cookie không có `HttpOnly`. Kẻ tấn công tiêm mã độc và thành công đọc được giá trị của `sessionId`.
 * **Kết quả:**
-    > **[Dán ảnh chụp màn hình 1: Hộp thoại `alert` hiện ra `sessionId=...` của bạn vào đây]**
+   trước khi nhập mã độc:
+   <img width="1427" height="618" alt="image" src="https://github.com/user-attachments/assets/3a94e00f-6e24-43b3-afd3-530031fe55e7" />
+
 
 **2. SAU khi bật `HttpOnly`:**
 * **Mô tả:** Sửa code `app.js` để thêm `{ httpOnly: true }` vào `res.cookie()`. Khởi động lại server và tấn công lại.
