@@ -50,7 +50,6 @@ secure-web-demo/
 ### Cách import database
 * **Không cần import thủ công.**
 * Khi bạn chạy ứng dụng lần đầu tiên (`node src/app.js`), file `demo.db` sẽ được **tự động tạo ra** ở thư mục gốc.
-* Code trong `app.js` cũng sẽ tự động tạo bảng `users`, `notes` và tài khoản `admin`.
 
 ### Cách cấu hình file kết nối DB
 * **Không cần file cấu hình** (`.env` hay `config.json`).
@@ -79,9 +78,6 @@ secure-web-demo/
 ## 5. 🧑‍💻 Tài khoản demo để đăng nhập
 * **Username:** `admin`
 * **Password:** `admin123`
-
-*(Tài khoản này được tự động tạo khi CSDL `demo.db` được khởi tạo).*
-
 ## 6. 🖼️ Kết quả và hình ảnh minh họa
 
 Dưới đây là các kịch bản demo "Trước" và "Sau" khi áp dụng các cờ cookie.
