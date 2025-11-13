@@ -1,12 +1,12 @@
 # Báo cáo Đề tài: Demo Cookie Flags Chống Session Hijacking
 
 **Tên đề tài:** Xây dựng cơ chế kiểm soát phiên đăng nhập (session hijacking prevention) – demo với cookie flags (HttpOnly, Secure).
-**Sinh viên thực hiện:** [Điền tên của bạn vào đây]
-**MSSV:** [Điền MSSV của bạn vào đây]
+**Họ tên sinh viên:** Bùi Vũ Gia Bảo,Lê Đức Phương
+**MSSV:** 22810310140
 
 ---
 
-## 1. 📜 Giới thiệu ngắn gọn về đề tài
+## 1. 📜 Giới thiệu về đề tài
 
 Đề tài này xây dựng một ứng dụng web Node.js đơn giản, có kết nối CSDL SQLite, mô phỏng có chủ đích các lỗ hổng bảo mật liên quan đến phiên đăng nhập. Mục tiêu là để trình diễn trực quan các kịch bản tấn công Session Hijacking (Chiếm đoạt phiên) thông qua:
 
@@ -31,12 +31,12 @@ Từ đó, đề tài demo cách áp dụng hai cờ (flags) bảo mật quan tr
 ```
 secure-web-demo/
 ├── src/
-│   └── app.js         <-- File mã nguồn chính, chứa toàn bộ logic (backend, CSDL).
-├── .gitignore         <-- File cấu hình để Git bỏ qua thư mục 'node_modules'.
-├── package.json       <-- Quản lý dependencies (express, sqlite3, cookie-parser).
-├── package-lock.json  <-- File khóa phiên bản của npm.
-├── demo.db            <-- File CSDL SQLite (sẽ tự động tạo ra khi chạy code).
-└── README.md          <-- File hướng dẫn này.
+│   └── app.js         
+├── .gitignore         
+├── package.json       
+├── package-lock.json  
+├── demo.db            
+└── README.md          
 ```
 
 ## 4. ⚙️ Hướng dẫn cài đặt & chạy chương trình
